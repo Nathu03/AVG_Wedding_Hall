@@ -1,0 +1,92 @@
+<html>
+    <title>Booking</title>
+    <head>
+    <link rel="stylesheet" type="text/css" href="CSS/booking.css"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+      ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: #9933cc;
+      }
+      
+      li {
+        float: left;
+      }
+      
+      li a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+      }
+      
+      li a:hover:not(.active) {
+        background-color: #111;
+      }
+      
+      .active {
+        background-color: #04AA6D;
+      }
+      </style>
+  
+  <ul>
+    <li><a href="Index.html">Home</a></li>
+    <li><a href="About.html">About</a></li>
+    <li><a href="Contactus.html">Contact</a></li>
+    <li style="float:right"><a class="active" href="Photos.html">Photos</a></li>
+    </ul>
+
+    </head>
+
+    <body>
+        <form action="booking.php" method="post">
+    <div class="elem-group">
+      <label for="name">Your Name</label>
+      <input type="text" id="name" name="Customer_name" placeholder="Narthu" pattern=[A-Z\sa-z]{3,20} required>
+    </div>
+    <div class="elem-group">
+      <label for="email">Your E-mail</label>
+      <input type="email" id="email" name="Customer_email" placeholder="Narthu.03@email.com" required>
+    </div>
+    <div class="elem-group">
+      <label for="phone">Your Phone</label>
+      <input type="tel" id="phone" name="Customer_phone" placeholder="071-1245-458" pattern=(\d{3})-?\s?(\d{3})-?\s?(\d{4}) required>
+    </div>
+    <hr>
+    <div class="elem-group inlined">
+      <label for="Amount_of_People">Amount of People</label>
+      <input type="number" id="Amount of People" name="Amount_of_People" placeholder="300" min="100" max="550" required>
+    </div>
+    <div class="elem-group">
+      <label for="Decoration-colour">Enter the preferred decoration colour? </label>
+      <input type="text" id="Decoration-colour" name="Decoration_colour" placeholder="Red" pattern=[A-Z\sa-z]{3,20} required>
+    </div>
+    <div class="elem-group inlined">
+      <label for="Allocated-date">Allocated date</label>
+      <input type="date" id="Allocated-date" name="Allocated_date" required>
+    </div>
+    <div class="elem-group">
+      <label for="Select-your-special-occasion"> Select your special occasion</label>
+      <select id="Select-your-special-occasion" name="Occasion" required>
+          <option value="">Choose your occasion</option>
+          <option value="Wedding ceremony">Wedding ceremony</option>
+          <option value="Birthday party">Birthday party</option>
+          <option value="Puberty ceremony">Puberty ceremony</option>
+          <option value="Anniversary celebration">Anniversary celebration</option>
+      </select>
+    </div>
+    <hr>
+    <div class="elem-group">
+      <label for="message">Anything Else?</label>
+      <textarea id="message" name="Customer_message" placeholder="Tell us anything else that might be important." required></textarea>
+    </div>
+    <button type="submit">Book now!</button>
+  </form>
+</body>
+</html>
+<script src="Js Library\booking.js"></script>

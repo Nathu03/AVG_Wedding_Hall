@@ -1,0 +1,9 @@
+@charset "utf-8";
+
+.slideshow-container {
+    border-radius: 5px;
+	width: 1500px;
+    background-color:#999;
+    padding: 20px;
+	
+}

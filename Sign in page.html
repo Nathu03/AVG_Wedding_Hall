@@ -1,0 +1,161 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Welcome To Registration Form</title>
+<link rel="stylesheet" type="text/css" href="CSS/sign in.css"/>
+<style>
+	ul {
+	  list-style-type: none;
+	  margin: 0;
+	  padding: 0;
+	  overflow: hidden;
+	  background-color: #9933cc;
+	}
+	
+	li {
+	  float: left;
+	}
+	
+	li a {
+	  display: block;
+	  color: white;
+	  text-align: center;
+	  padding: 14px 16px;
+	  text-decoration: none;
+	}
+	
+	li a:hover:not(.active) {
+	  background-color: #111;
+	}
+	
+	.active {
+	  background-color: #04AA6D;
+	}
+	</style>
+
+<ul>
+<li><a href="Index.html">Home</a></li>
+<li><a href="About.html">About</a></li>
+<li><a href="Contactus.html">Contact</a></li>
+<li style="float:right"><a class="active" href="Photos.html">Photos</a></li>
+</ul>
+
+<script>
+
+function registration()
+	{
+
+		var name= document.getElementById("t1").value;
+		var email= document.getElementById("t2").value;
+		var uname= document.getElementById("t3").value;
+		var pwd= document.getElementById("t4").value;			
+		var cpwd= document.getElementById("t5").value;
+		
+		var pwd_expression = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-])/;
+		var letters = /^[A-Za-z]+$/;
+		var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+
+		if(name=='')
+		{
+			alert('Please enter your name');
+		}
+		else if(!letters.test(name))
+		{
+			alert('Name field required only alphabet characters');
+		}
+		else if(email=='')
+		{
+			alert('Please enter your user email id');
+		}
+		else if (!filter.test(email))
+		{
+			alert('Invalid email');
+		}
+		else if(uname=='')
+		{
+			alert('Please enter the user name.');
+		}
+		else if(!letters.test(uname))
+		{
+			alert('User name field required only alphabet characters');
+		}
+		else if(pwd=='')
+		{
+			alert('Please enter Password');
+		}
+		else if(cpwd=='')
+		{
+			alert('Enter Confirm Password');
+		}
+		else if(!pwd_expression.test(pwd))
+		{
+			alert ('Upper case, Lower case, Special character and Numeric letter are required in Password filed');
+		}
+		else if(pwd != cpwd)
+		{
+			alert ('Password not Matched');
+		}
+		else if(document.getElementById("t5").value.length < 6)
+		{
+			alert ('Password minimum length is 6');
+		}
+		else if(document.getElementById("t5").value.length > 12)
+		{
+			alert ('Password max length is 12');
+		}
+		else
+		{				                            
+               alert('Thank You for Login & You are Redirecting to AVG _Wedding_Hall Website');
+			   // Redirecting 
+			   window.location = "Index.html"; 
+		}
+	}
+
+</script>
+</head>
+
+  <body>
+  
+  <div id="main">
+  <div class="h-tag">
+  <h2>Create Your Account</h2>
+  </div>
+  <!-- create account  -->
+  <div class="login">
+	  <form action="connect.php" method="post" onsubmit="registration()">
+  <table cellspacing="2" align="center" cellpadding="8" border="0">
+  <tr>
+  <td align="right">Enter Name :</td>
+  <td><input type="text" placeholder="Enter user here" id="t1" class="tb" name="Enter_Name" /></td>
+  </tr>
+  <tr>
+  <td align="right">Enter Email ID :</td>
+  <td><input type="text" placeholder="Enter Email ID here" id="t2" class="tb" name="Enter_Email_ID" /></td>
+  </tr>
+  <tr>
+  <td align="right">Enter Username :</td>
+  <td><input type="text" placeholder="Enter Username here" id="t3" class="tb" name="Enter_Username" /></td>
+  </tr>
+  <tr>
+  <td align="right">Enter Password :</td>
+  <td><input type="password" placeholder="Enter Password here" id="t4" class="tb" /></td>
+  </tr>
+  <tr>
+  <td align="right">Enter Confirm Password :</td>
+  <td><input type="password" placeholder="Enter Password here" id="t5" class="tb" name="Enter_Password" /></td>
+  </tr>
+  <tr>
+  <td></td>
+  <td>
+  <input type="reset" value="Clear Form" id="res" class="btn" />
+  <input type="submit" value="Create Account" class="btn"  /></td>
+  </tr>
+  </table>
+</form>
+  </div>
+  <!-- create account box ending -->
+  </div>
+  </body>
+  </html>
+  
